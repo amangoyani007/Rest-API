@@ -9,6 +9,13 @@ app.get('/getUsers', function(req, res){
     });
 })
 
+app.get('/aman', function(req, res){
+    fs.readFile(__dirname + "/" + "text.json", 'utf8', function(err, data){
+        console.log(data);
+        res.end(data);
+    });
+})
+
 var server = app.listen(8080, function(){
     var host = server.address().address
     var port = server.address().port
